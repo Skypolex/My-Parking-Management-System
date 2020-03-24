@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+<constant name="struts.ui.theme" value="simple"></constant>  <!-- 简单样式 -->
+
+<package name="default" extends="struts-default" namespace="/">
+
+	<action name="login" class="cn.mysora.carsystem.action.LoginAction">
+		<result>${loginResultPage}</result>
+	</action>
+	
+	<action name="logout" class="cn.mysora.carsystem.action.LogoutActoin">
+		<result>login.jsp</result>
+	</action>
+	
+	<action name="index" class="cn.mysora.carsystem.action.IndexActoin">
+		<result>parkinfo.jsp</result>
+	</action>
+	
+	<action name="car*" method="{1}" class="cn.mysora.carsystem.action.CarAction">
+		<result name="show">admin/carshow.jsp</result>
+		<result name="input">admin/carinput.jsp</result>
+		<result name="save">admin/carshow.jsp</result>
+		<result name="delete">admin/carshow.jsp</result>
+		<result name="details">admin/carupdate.jsp</result>
+		<result name="update">admin/carshow.jsp</result>
+		<result name="check">admin/carcheck.jsp</result>
+	</action>
+	
+	<action name="membercar*" method="{1}" class="cn.mysora.carsystem.action.MemberCarAction">
+		<result name="show">admin/membercarshow.jsp</result>
+		<result name="input">admin/membercarinput.jsp</result>
+		<result name="save">admin/membercarshow.jsp</result>
+		<result name="delete">admin/membercarshow.jsp</result>
+		<result name="details">admin/membercarupdate.jsp</result>
+		<result name="update">admin/membercarshow.jsp</result>
+	</action>
+	
+	<action name="admin*" method="{1}" class="cn.mysora.carsystem.action.AdminAction">
+		<result name="show">superadmin/adminshow.jsp</result>
+		<result name="input">superadmin/admininput.jsp</result>
+		<result name="save">superadmin/adminshow.jsp</result>
+		<result name="delete">superadmin/adminshow.jsp</result>
+		<result name="details">superadmin/adminupdate.jsp</result>
+		<result name="update">superadmin/adminshow.jsp</result>
+		<result name="exit">login.jsp</result>
+	</action>
+		
+	<action name="park*" method="{1}" class="cn.mysora.carsystem.action.ParkAction">
+		<result name="show">superadmin/parkshow.jsp</result>
+		<result name="input">superadmin/parkinput.jsp</result>
+		<result name="save">superadmin/parkshow.jsp</result>
+		<result name="delete">superadmin/parkshow.jsp</result>
+		<result name="details">superadmin/parkupdate.jsp</result>
+		<result name="update">superadmin/parkshow.jsp</result>
+	</action>
+	
+
+	
+</package>
+</struts>     
